@@ -61,12 +61,14 @@ app.post('/upload', upload.single('image'), function(req, res) {
     //     message: 'uploaded'
     //   }
     // )
+    let location = 'http://localhost:3000/images/' + req.file.filename;
     res.send({
       headers: req.headers,
       route: req.route,
       rawHeaders: req.rawHeaders,
       body: req.body,
-      file: req.file
+      file: req.file,
+      location: location
     })
   }
 });

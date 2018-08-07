@@ -32,7 +32,7 @@ export class AppComponent {
           } else if (event.type === HttpEventType.Response) {
             console.log(event);
             let link = document.getElementById('link');
-            let url = 'http://localhost:3000/images/' + event.body["file"].filename;
+            let url = 'http://localhost:3000/images/' + event.body['file'].filename;
             link.innerHTML = `<a href=${url} target=url>${url}</a>`;
           }
         });
